@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Invitación oficial de Heartslabyul</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap">
+<style>
+:root{--bg:#1c0a0e;--bg2:#2b0d14;--red:#b3202f;--rose:#e0495c;--gold:#e2bd62;--ink:#fbefe9;--soft:#e8c9c4;--paper:#fbf1ea;--paper-ink:#3a0f17;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#160709;--bg2:#240a11}}
+:root[data-theme="dark"]{--bg:#160709;--bg2:#240a11}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:radial-gradient(ellipse at 50% 0%,var(--bg2),var(--bg) 70%);color:var(--ink);font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-size:20px;line-height:1.5;overflow-x:hidden}
+.suits{position:fixed;inset:0;pointer-events:none;color:var(--red);opacity:.16;font-size:64px;z-index:0}
+.suits span{position:absolute}
+.screen{position:relative;z-index:1;min-height:100%;display:none;flex-direction:column;align-items:center;justify-content:center;padding:24px 18px;text-align:center}
+.screen.on{display:flex;animation:fade .7s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+h1,h2{font-weight:700;margin:0;line-height:1.1}
+h1{font-size:clamp(34px,8vw,56px);color:var(--gold)}
+h2{font-size:28px;color:var(--gold)}
+button{font:inherit;font-weight:700;cursor:pointer;border:2px solid var(--gold);background:var(--red);color:var(--ink);padding:10px 26px;border-radius:999px}
+button:hover{background:var(--rose)}
+button:focus-visible,.env:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+button[disabled]{opacity:.35;cursor:default}
+/* sobre */
+.env{position:relative;width:min(300px,80vw);aspect-ratio:3/2;margin:36px 0 22px;background:var(--red);border:0;padding:0;border-radius:6px;box-shadow:0 18px 40px #0008;perspective:900px;cursor:pointer}
+.env .front{position:absolute;inset:0;background:linear-gradient(135deg,#c92a3b,#8e1624);clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);border-radius:6px}
+.env .flap{position:absolute;left:0;right:0;top:0;height:58%;background:#9d1a29;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .8s ease;z-index:2}
+.env.open .flap{transform:rotateX(180deg);z-index:0}
+.seal{position:absolute;left:50%;top:50%;width:56px;height:56px;margin:-28px;border-radius:50%;background:var(--gold);color:var(--red);font-size:32px;line-height:56px;z-index:3;box-shadow:0 3px 8px #0006;transition:opacity .4s}
+.env.open .seal{opacity:0}
+/* tarjeta */
+.card{background:var(--paper);color:var(--paper-ink);border:3px double var(--red);border-radius:10px;max-width:560px;width:100%;padding:30px 24px;box-shadow:0 20px 50px #0009}
+.card h1{color:var(--red)}
+.card h2{color:var(--red);font-size:22px}
+.card p{margin:10px 0}
+.rules{list-style:none;margin:18px 0 24px;padding:0;text-align:left}
+.rules li{padding:9px 0 9px 34px;position:relative;border-top:1px solid #b3202f33}
+.rules li::before{content:"♥";position:absolute;left:4px;color:var(--red)}
+.small{font-style:italic;color:var(--soft);font-size:18px}
+/* libro */
+.book{width:100%;max-width:520px}
+.page{background:var(--paper);color:var(--paper-ink);border:3px double var(--red);border-radius:10px;min-height:330px;padding:32px 26px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 20px 50px #0009}
+.page h1,.page h2{color:var(--red)}
+.page h1{font-size:clamp(34px,9vw,48px)}
+.page.turn{animation:turn .45s ease}
+@keyframes turn{from{opacity:0;transform:translateX(24px) rotateY(-14deg)}to{opacity:1;transform:none}}
+.num{font-size:60px;font-weight:700;color:var(--red);line-height:1}
+.page p{margin:12px 0 0;font-size:24px;max-width:30ch}
+.page ul{text-align:left;padding-left:20px;margin:10px 0 0}
+.nav{display:flex;gap:14px;justify-content:center;align-items:center;margin-top:20px}
+.fx{position:fixed;top:-30px;z-index:5;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:.8}}
+.roses{display:flex;gap:10px;justify-content:center;margin:12px 0 4px}
+.rose{background:#fff;color:#cfc2bd;border:2px solid #d9c9c3;width:52px;height:52px;padding:0;font-size:28px;line-height:1;transition:background .4s,color .4s,border-color .4s}
+.rose:hover{background:#fff}.rose.red,.rose.red:hover{background:var(--red);border-color:var(--gold);color:#fff}
+.cp{padding:0;margin:8px 0 0;width:100%}.cp li{list-style:none;border:2px dashed var(--red);border-radius:8px;padding:8px 12px;margin:8px 0;font-size:20px}
+.page .big{font-size:20px;color:var(--paper-ink)}
+.opt{display:block;width:100%;max-width:320px;margin:8px auto 0;background:#fff;color:var(--paper-ink);border:2px solid var(--red);font-weight:500;font-size:18px;border-radius:12px;padding:8px 14px}
+.opt:hover{background:#f6dcd9}.opt.ok,.opt.ok:hover{background:#2f7d4a;color:#fff;border-color:#2f7d4a}.opt.no,.opt.no:hover{background:#8a7a78;color:#fff;border-color:#8a7a78}
+.cert{border:2px solid var(--gold);padding:16px;border-radius:8px;width:100%}
+.ghost,.ghost:hover{background:transparent;color:var(--red);border-color:var(--red);margin-top:12px;font-size:17px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="suits" aria-hidden="true"><span style="left:4%;top:6%">♥</span><span style="right:6%;top:12%">♠</span><span style="left:8%;bottom:8%">♣</span><span style="right:5%;bottom:6%">♦</span></div>
+
+<section class="screen on" id="s1">
+  <h2 id="to"></h2>
+  <button class="env" id="env" aria-label="Abrir el sobre"><span class="front"></span><span class="flap"></span><span class="seal">♥</span></button>
+  <p class="small">Toca el sobre para abrirlo</p><p class="small" id="cd"></p>
+</section>
+
+<section class="screen" id="s2">
+  <div class="card">
+    <p class="small" style="color:#8e1624">El dormitorio Heartslabyul requiere tu presencia</p>
+    <h1>Fiesta de Cumpleaños</h1>
+    <p><strong>Una invitación solo para ti</strong></p><p>Por orden del dormitorio, hoy es un día de <em>no-cumpleaños</em> y de cumpleaños a la vez, en honor a <strong id="nm"></strong>.</p><p style="margin-bottom:0">Las rosas blancas siguen sin pintar. Tócalas.</p><div class="roses" id="roses"><button class="rose" aria-label="Pintar rosa">✿</button><button class="rose" aria-label="Pintar rosa">✿</button><button class="rose" aria-label="Pintar rosa">✿</button></div><p id="rmsg" class="small" style="color:#8e1624;min-height:30px;margin:4px 0"></p>
+    <h2>Reglas del cumpleaños</h2>
+    <ul class="rules">
+      <li>Hoy solo se permite ser feliz.</li>
+      <li>La cumpleañera siempre tiene la razón.</li>
+      <li>Queda prohibido trabajar, estudiar o estresarse.</li>
+      <li>El té y los postres son obligatorios.</li><li>La cumpleañera tiene derecho a pedir un deseo, y debe tomarse muy en serio.</li>
+      <li>Quien olvide felicitarla recibirá un “¡Que le corten la cabeza!” simbólico.</li>
+    </ul>
+    <button id="toBook">Abrir el libro de razones</button><br><button class="ghost" id="dont">No toques este botón</button><p id="dmsg" class="small" style="color:#8e1624;margin:6px 0 0"></p>
+  </div>
+</section>
+
+<section class="screen" id="s3">
+  <div class="book">
+    <div class="page" id="pg" aria-live="polite"></div>
+    <div class="nav">
+      <button id="prev" aria-label="Página anterior">‹</button>
+      <span class="small" id="cnt"></span>
+      <button id="next" aria-label="Página siguiente">›</button>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ===== PERSONALIZA AQUÍ ===== */
+var C={
+  name:"Mi amor",
+  sign:"Con todo mi cariño",
+  reasons:[
+    "Porque tu risa me alegra el día entero.",
+    "Porque contigo hasta lo simple se siente especial.",
+    "Porque eres más valiente de lo que crees.",
+    "Porque me escuchas incluso cuando no sé explicarme.",
+    "Porque compartir lo que te gusta me hace querer conocerlo también.",
+    "Porque la distancia contigo se hace pequeña.",
+    "Porque me haces querer ser mejor persona.",
+    "Porque estar a tu lado, aunque sea en pantalla, es mi mejor parte del día.",
+    "Porque tu forma de ver el mundo me hace verlo más bonito.",
+    "Porque eres perseverante y no te rindes aunque cueste.",
+    "Porque tienes un corazón enorme con la gente que quieres.",
+    "Porque me haces sentir que puedo ser yo sin disfraces.",
+    "Porque cuando algo te emociona, se te nota, y es hermoso verlo.",
+    "Porque tus mensajes son mi parte favorita del día.",
+    "Porque me enseñas cosas nuevas sin darte cuenta.",
+    "Porque aunque haya días difíciles, contigo se aligeran.",
+    "Porque eres tan auténtica que contagias ganas de serlo también.",
+    "Porque me haces reír cuando menos lo espero.",
+    "Porque ya eres alguien admirable, y lo que viene será aún mejor."
+  ],
+  rules:[
+    "Nunca dejaré de escucharte.",
+    "Celebraré tus logros, grandes y pequeños.",
+    "Cuando la distancia pese, buscaré la forma de acortarla."
+  ],
+  riddle:"Heartslabyul tiene una regla más para hoy: nadie puede quitarte la sonrisa. Si alguien lo intenta, ¡habrá consecuencias (de mentira)! Mereces las rosas más rojas del jardín.",
+  coupons:["Vale por una noche de película que tú eliges","Vale por un dibujo o edit hecho por mí","Vale por una canción dedicada","Vale por un día en el que tú decides todo"],
+  message:"Gracias por existir y por dejarme ser parte de tu vida. Feliz cumpleaños, mi vida."
+};
+/* ============================= */
+var pages=[],i=0,$=function(id){return document.getElementById(id)};
+pages.push('<h1>Razones por las cuales te amo</h1><p class="small" style="color:#8e1624">Un libro hecho para ti, '+C.name+' ♥</p>');
+C.reasons.forEach(function(r,k){pages.push('<div class="num">'+(k+1)+'</div><h2>Una razón por la cual te amo</h2><p>'+r+'</p>')});
+pages.push('<h2>Nuestras reglas</h2><ul>'+C.rules.map(function(r){return'<li>'+r+'</li>'}).join('')+'</ul>');
+pages.push('<h2>Un aviso desde Heartslabyul</h2><p>'+C.riddle+'</p>');
+pages.push('<div class="cert"><h2>Certificado oficial</h2><p class="big">Se declara a <strong>'+C.name+'</strong> Reina del Día en Heartslabyul, con derecho a té, tartas y cero preocupaciones.</p><p class="small" style="color:#8e1624;margin:0">Firmado por el dormitorio Heartslabyul ✿</p></div>');
+var Q=[["¿De qué dormitorio es Riddle?",["Savanaclaw","Heartslabyul","Octavinelle"],1],["¿Cómo se llama su Magia Única?",["Off with Your Head","Sombra de Nieve","Corazón Infinito"],0],["¿En qué personaje de Alicia en el País de las Maravillas se inspira?",["El Gato de Cheshire","El Sombrerero Loco","La Reina de Corazones"],2]];
+Q.forEach(function(q,n){pages.push('<h2>Prueba de Heartslabyul ('+(n+1)+'/3)</h2><p class="big">'+q[0]+'</p>'+q[1].map(function(o,j){return'<button class="opt" data-ok="'+(j===q[2]?1:0)+'">'+o+'</button>'}).join('')+'<p class="small" id="fb" style="color:#8e1624;min-height:28px;margin:8px 0 0"></p>')});
+pages.push('<h2>Programa de la fiesta</h2><ul class="cp"><li>Hora del té y los postres, juntos</li><li>Algo de Twisted Wonderland que elijas tú</li><li>Una última sorpresa que todavía no te cuento</li></ul>');
+pages.push('<h2>Cupones de cumpleaños</h2><ul class="cp">'+C.coupons.map(function(r){return'<li>'+r+'</li>'}).join('')+'</ul>');
+pages.push('<h2>Para ti, '+C.name+'</h2><p>'+C.message+'</p><p class="small" style="color:#8e1624">'+C.sign+' ♥</p><div style="margin-top:16px"><button id="wish">Pedir un deseo</button></div>');
+$('to').textContent='Para ti, '+C.name;$('nm').textContent=C.name;
+function show(id){['s1','s2','s3'].forEach(function(s){$(s).classList.toggle('on',s===id)})}
+function draw(){var p=$('pg');p.classList.remove('turn');void p.offsetWidth;p.innerHTML=pages[i];p.classList.add('turn');$('cnt').textContent=(i+1)+' / '+pages.length;$('prev').disabled=i===0;$('next').disabled=i===pages.length-1;quiz();var w=$('wish');if(w)w.onclick=function(){burst();this.parentNode.innerHTML='<p class="small" style="color:#8e1624">Cierra los ojos, pide tu deseo y quédate un momento con él ♥</p>'}}
+function quiz(){document.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){var ok=b.dataset.ok==='1';document.querySelectorAll('.opt').forEach(function(x){x.classList.remove('no')});if(ok){b.classList.add('ok');$('fb').textContent='¡Correcto! Digno de Heartslabyul.';burst()}else{b.classList.add('no');$('fb').textContent='Casi. Inténtalo otra vez.'}}})}
+function burst(){for(var k=0;k<40;k++){let s=document.createElement('span');s.className='fx';s.textContent=['♥','✿','♦'][k%3];s.style.cssText='left:'+Math.random()*100+'%;color:'+(k%2?'#e2bd62':'#e0495c')+';font-size:'+(14+Math.random()*18)+'px;animation-duration:'+(3+Math.random()*3)+'s;animation-delay:'+Math.random()*1.2+'s';document.body.appendChild(s);setTimeout(function(){s.remove()},8000)}}
+var cd=Math.round((new Date(2026,10,6)-new Date().setHours(0,0,0,0))/864e5);$('cd').textContent=cd>1?'Faltan '+cd+' días para tu gran día':cd===1?'Mañana es tu gran día':cd===0?'¡Hoy es tu gran día!':'';
+var red=0;document.querySelectorAll('.rose').forEach(function(b){b.onclick=function(){if(!b.classList.contains('red')){b.classList.add('red');red++;if(red===3){$('rmsg').textContent='Hasta las rosas se pintan de rojo para ti.';burst()}}}});
+$('env').onclick=function(){this.classList.add('open');setTimeout(function(){show('s2');burst()},1000)};
+$('dont').onclick=function(){$('dmsg').textContent='¡Regla rota! Habrá un “¡Que le corten la cabeza!”... de mentira. Sabía que lo ibas a tocar.'};
+$('toBook').onclick=function(){show('s3');draw()};
+$('prev').onclick=function(){if(i>0){i--;draw()}};
+$('next').onclick=function(){if(i<pages.length-1){i++;draw()}};
+</script>
+</body>
+</html>
